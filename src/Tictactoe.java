@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
-public class tictactoe{
+public class Tictactoe {
     int size;
     int[][] field;
 
-    public tictactoe(int size){
+    public Tictactoe(int size){
         // 0 - пусто, 1 - крестик, 2 - нолик
         this.field = new int[size][size];
         this.size = size;
