@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Tictactoe {
     int size;
     int[][] field;
@@ -90,11 +88,12 @@ public class Tictactoe {
         }
         for(dist1 = 0; dist1 <= this.size*2-2; dist1++){
             dist2 = ((dist1 < this.size) ? dist1 : ((this.size * 2) - dist1-1));
-                for(int i1 = ((dist1 < this.size) ? 0 : (dist1-this.size + 1)); i1 < ((dist1 < this.size) ? dist2+1 : this.size) ; i1++){
-                    int j1 = dist1-i1;
-                    if (this.field[i1][j1]==content){lenght++;}else{max = (lenght>max)?lenght:max;lenght=0;}
-                }
-            max = (lenght>max)?lenght:max;lenght=0;
+            for(int i1 = ((dist1 < this.size) ? 0 : (dist1-this.size + 1)); i1 < ((dist1 < this.size) ? dist2+1 : this.size) ; i1++){
+                int j1 = dist1-i1;
+                if (this.field[i1][j1]==content){lenght++;}else{max = (lenght>max)?lenght:max;lenght=0;}
+            }
+            max = (lenght>max)?lenght:max;
+            lenght=0;
         }
         for(dist1 = 0; dist1 <= this.size*2-2; dist1++){
             dist2 = ((dist1 < this.size) ? dist1 : ((this.size * 2) - dist1-1));
@@ -102,7 +101,8 @@ public class Tictactoe {
                 int j1 = this.size - dist1 - 1 + i1;
                 if (this.field[i1][j1]==content){lenght++;}else{max = (lenght>max)?lenght:max;lenght=0;}
             }
-            max = (lenght>max)?lenght:max;lenght=0;
+            max = (lenght>max)?lenght:max;
+            lenght=0;
         }
     return max;
     }
